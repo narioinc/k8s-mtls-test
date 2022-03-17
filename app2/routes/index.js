@@ -15,7 +15,7 @@ router.get('/ipgeo', function(req, res, next) {
 });
 
 router.get('/app1', function(req, res, next) {
-  const ipRes = axios.get('https://app1').then(function (response) {
+  const ipRes = axios.get('http://nodejs-app1/').then(function (response) {
     console.log(response.data);
     res.send(response.data);
   });  

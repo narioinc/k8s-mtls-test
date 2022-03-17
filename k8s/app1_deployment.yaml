@@ -5,7 +5,7 @@ metadata:
   labels:
     app:  nodejs-app1
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app:  nodejs-app1
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name:  nodejs-app1
-        image: nginx:1.14.2
+        image: narioinc89/mtls-app1
         ports:
         - containerPort: 3000
