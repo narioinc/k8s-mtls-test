@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app2
+  labels:
+    app:  nodejs-app2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:  nodejs-app2
+  template:
+    metadata:
+      labels:
+        app:  nodejs-app2
+    spec:
+      containers:
+      - name:  nodejs-app2
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 4000
