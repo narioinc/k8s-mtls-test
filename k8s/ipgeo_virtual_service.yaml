@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ipgeo-timeout
+spec:
+  hosts:
+    - ipinfo.io
+  http:
+  - timeout: 3s
+    route:
+      - destination:
+          host: ipinfo.io
+        weight: 100
