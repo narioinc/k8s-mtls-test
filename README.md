@@ -11,9 +11,9 @@ A slightly modified version of app1 that does the followin
 2) has endpoint / simialr to app1 and returns a json object
 3) has an endpoint /ipgeo that returns a detail about an IP geolocation from an external https service
 
-GET https://nodejs-app2/
-GET https://nodejs-app2/app1
-GET https://nodejs-app2/ipgeo
+* GET https://nodejs-app2/
+* GET https://nodejs-app2/app1
+* GET https://nodejs-app2/ipgeo
 
 The point of this setup is to experiment with kubernetes MTLS as the theory that is given in the istio docs
 were not very clear to me
@@ -26,7 +26,7 @@ were not very clear to me
 
 
 # Steps to replicate the experiment
-1) Deploy the app2 and app2 pods and servcies in the default namespace
+1) Deploy the app1 and app2 pods and servcies in the default namespace
 2) deploy peer authnetciation so that MTLS is set to strict for the dfault namespace
 3) Try to call the various endpoints mentioned above using postman or any tool of your choice (either via the loadblanacer endpoint or using kubectl portforward)
 4) Check the traffic graph in Kiali. the connections between the servcie showuld show a green line with a lock indicating that the service is gettign terminated via MTLS
