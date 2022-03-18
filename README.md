@@ -2,7 +2,7 @@
 This repository contains experiments on mutual TLS for mesh or mesh external services in istio
 
 # App1
-A simple nodejs app that return a josn object when you hit the root
+A simple nodejs app that return a json object when you hit the root path
 GET https://nodes-app1/ 
 
 # App2
@@ -10,6 +10,10 @@ A slightly modified version of app1 that does the followin
 1) has and endpoint /app1 to call app1 and get response
 2) has endpoint / simialr to app1 and returns a json object
 3) has an endpoint /ipgeo that returns a detail about an IP geolocation from an external https service
+
+GET https://nodejs-app2/
+GET https://nodejs-app2/app1
+GET https://nodejs-app2/ipgeo
 
 The point of this setup is to experiment with kubernetes MTLS as the theory that is given in the istio docs
 were not very clear to me
